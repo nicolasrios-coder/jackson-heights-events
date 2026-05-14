@@ -1,0 +1,36 @@
+name: Daily Event Update
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # 2pm Eastern (UTC-4 in summer)
+  workflow_dispatch:         # lets you trigger it manually from GitHub
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # needed to push the generated files back
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        run: python pipeline.py
+
+      - name: Commit and push generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html events_all_*.txt events_tomorrow_*.json
+          git diff --cached --quiet || git commit -m "chore: daily event update $(date -u +'%Y-%m-%d')"
+          git push
