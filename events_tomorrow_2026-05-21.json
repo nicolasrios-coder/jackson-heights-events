@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Zumba with Veva",
+    "url": "https://jacksonheightsinsider.com/event/zumba-with-veva/",
+    "date": "2026-05-22",
+    "start_time": "9:00 am",
+    "end_time": "10:00 am",
+    "venue": "34th Ave & 94th St",
+    "address": "Queens, NY 11372, USA",
+    "description": "Start your Saturday off with an enjoyable and effective workout! (At office during inclement weather.)",
+    "price": null
+  },
+  {
+    "title": "Innovation Stations: Python Coding 101",
+    "url": "https://jacksonheightsinsider.com/event/innovation-stations-python-coding-101/",
+    "date": "2026-05-22",
+    "start_time": "4:00 pm",
+    "end_time": "5:30 pm",
+    "venue": "Queens Public Library at Jackson Heights",
+    "address": null,
+    "description": "Python Coding 101 is a beginner-friendly workshop designed to introduce teens to the exciting world of programming using the versatile and widely-used Python language. Led by ArrayScape, this hands-on session will break down the basics of coding in an approachable, engaging way, perfect for those with little to no prior experience. Participants will explore core […]",
+    "price": null
+  }
+]
